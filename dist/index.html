@@ -55,7 +55,9 @@
 <body>
 
   <div id="video-container">
-    <video id="pose-video" class="layer" playsinline></video>
+    <video id="pose-video" class="layer" playsinline muted="muted" crossorigin='anonymous'>
+	 <source src="IMG_0003.mp4" >
+	</video>
     <canvas id="pose-canvas" class="layer"></canvas>
     <div id="pose-result" class="layer"></div>
   </div>
@@ -161,8 +163,8 @@
       video.height = height;
 
       // get video stream
-      const stream = await navigator.mediaDevices.getUserMedia(constraints);
-      video.srcObject = stream;
+      //const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      //video.srcObject = stream;
 
       return new Promise(resolve => {
         video.onloadedmetadata = () => { resolve(video) };
